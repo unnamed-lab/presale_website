@@ -140,6 +140,9 @@ html body .heading h6 {
   word-spacing: 4px;
   width: fit-content;
 }
+html body .bs-100 {
+  box-shadow: 2px 3px 5px 1px #000000;
+}
 html body .card {
   width: 100%;
   max-width: 100%;
@@ -158,13 +161,13 @@ html body .card-header {
 }
 html body .card-body {
   padding-bottom: 1rem;
-  border-bottom: 3px solid #787878;
 }
 html body .card-sub {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: inherit;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  border-top: 3px solid #787878;
 }
 html body .card-sub .sub-item {
   height: 100%;
@@ -323,6 +326,14 @@ html body .card-sub .sub-item:nth-last-child(1) {
     transform: rotateZ(2160deg);
     left: 98vw;
     opacity: 0%;
+  }
+}
+@keyframes loading {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
   }
 }
 .navbar {
@@ -596,6 +607,57 @@ html body .card-sub .sub-item:nth-last-child(1) {
   top: 25vh;
   right: -45vw;
   box-shadow: 0 0 8rem 7rem #9f39ff;
+}
+#tokenomics .loader {
+  display: flex;
+  width: 100%;
+  height: 3rem;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  animation: loading 2s infinite;
+  background-size: 200% 100%;
+  border-radius: 1rem;
+  backdrop-filter: blur(4px);
+  padding: 0;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: 2px 3px 8px 1px #282828;
+}
+#tokenomics .loader .bar {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  opacity: 90%;
+  backdrop-filter: blur(7px);
+}
+#tokenomics .item-list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+#tokenomics .item-list .value {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  font-size: var(--fs-500);
+  margin-left: auto;
+  margin-right: auto;
+  pointer-events: none;
+  opacity: 90%;
+}
+#tokenomics .item-list .value i {
+  content: "";
+  position: absolute;
+  opacity: 100%;
+  border-radius: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  transform: translateY(-50%);
+  top: 50%;
+  left: -1.5rem;
+  background-color: inherit;
 }
 
 /*  Custom SCSS Pack   */
