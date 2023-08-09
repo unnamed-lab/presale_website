@@ -348,11 +348,8 @@ html body .card-sub .sub-item:nth-last-child(1) {
     left: -5vw;
     opacity: 0%;
   }
-  30% {
-    opacity: 60%;
-  }
-  70% {
-    opacity: 30%;
+  50% {
+    opacity: 40%;
   }
   100% {
     transform: rotateZ(2160deg);
@@ -477,7 +474,9 @@ html body .card-sub .sub-item:nth-last-child(1) {
   border-radius: 20%;
   overflow: hidden;
   background-color: #ffffff;
-  animation: floatInVoid 8s ease-in-out infinite;
+  opacity: 0%;
+  transition: all 250ms;
+  animation: floatInVoid 10s ease-in-out infinite;
 }
 #hero-section .particles .dust:nth-child(1) {
   top: 5vh;
@@ -544,6 +543,7 @@ html body .card-sub .sub-item:nth-last-child(1) {
   min-height: 100vh;
   overflow-y: hidden;
   border-bottom: 2px solid #282828;
+  margin-bottom: 1.2rem;
 }
 #call-to-action .countdown {
   position: absolute;
@@ -584,7 +584,7 @@ html body .card-sub .sub-item:nth-last-child(1) {
 #overview {
   min-height: 100vh;
   overflow-y: hidden;
-  padding-top: 3vh;
+  padding-top: 5vh;
 }
 #overview .overview-detail {
   display: flex;
