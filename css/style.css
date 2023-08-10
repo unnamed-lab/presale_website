@@ -9,6 +9,12 @@ html body {
   background-color: #0f0318;
   padding-left: 3.5rem;
   padding-right: 3.5rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html body::-webkit-scrollbar {
+  display: none;
 }
 html body nav {
   display: flex;
@@ -39,6 +45,9 @@ html body .row {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
+}
+html body .align-center {
+  align-items: center;
 }
 html body .mx-auto {
   margin-left: auto;
@@ -82,39 +91,51 @@ html body .mt-6 {
 }
 html body .col-1 {
   max-width: 8.3333333333%;
+  flex: 1;
 }
 html body .col-2 {
   max-width: 16.6666666667%;
+  flex: 1;
 }
 html body .col-3 {
   max-width: 25%;
+  flex: 1;
 }
 html body .col-4 {
   max-width: 33.3333333333%;
+  flex: 1;
 }
 html body .col-5 {
   max-width: 41.6666666667%;
+  flex: 1;
 }
 html body .col-6 {
   max-width: 50%;
+  flex: 1;
 }
 html body .col-7 {
   max-width: 58.3333333333%;
+  flex: 1;
 }
 html body .col-8 {
   max-width: 66.6666666667%;
+  flex: 1;
 }
 html body .col-9 {
   max-width: 75%;
+  flex: 1;
 }
 html body .col-10 {
   max-width: 83.3333333333%;
+  flex: 1;
 }
 html body .col-11 {
   max-width: 91.6666666667%;
+  flex: 1;
 }
 html body .col-12 {
   max-width: 100%;
+  flex: 1;
 }
 html body .info {
   font-size: var(--fs-200);
@@ -209,6 +230,64 @@ html body .card-sub .sub-item {
 }
 html body .card-sub .sub-item:nth-last-child(1) {
   border-right: none;
+}
+html body .footer {
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+html body .footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100% !important;
+}
+html body .footer-container .footer-brand {
+  max-width: 8rem;
+  margin-bottom: 1.5rem;
+}
+html body .footer-container .footer-brand img {
+  width: 100%;
+}
+html body .footer-container .footer-description {
+  font-size: var(--fs-300);
+  margin-bottom: 2rem;
+}
+html body .footer-container .footer-heading {
+  color: #646464;
+  font-size: calc(1.1 * var(--fs-500));
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+html body .footer-container .footer-menu {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+html body .footer-container .footer-menu .footer-option {
+  margin-bottom: 0.5rem;
+}
+html body .footer-container .footer-menu .footer-option .footer-link {
+  color: #c8c8c8;
+}
+html body .footer-container .footer-menu .footer-option .footer-link:hover {
+  color: #00c3ff;
+  transition: all 1s;
+}
+html body .footer-container .footer-menu .footer-option .footer-link:active {
+  color: #002FFF;
+}
+html body .footer .credit {
+  margin-top: 1rem;
+}
+html body .footer .credit .footer-credit {
+  color: #008cff;
+}
+html body .footer .credit .footer-credit:hover {
+  color: #00c3ff;
+  transition: all 1s;
+}
+html body .footer .credit .footer-credit:active {
+  color: #002FFF;
 }
 
 /*  Typography  */
@@ -345,15 +424,16 @@ html body .card-sub .sub-item:nth-last-child(1) {
 @keyframes floatInVoid {
   0% {
     transform: rotateZ(0deg);
-    left: -5vw;
+    left: 2%;
     opacity: 0%;
   }
   50% {
     opacity: 40%;
+    left: 50vw;
   }
   100% {
     transform: rotateZ(2160deg);
-    left: 98vw;
+    left: 98%;
     opacity: 0%;
   }
 }
@@ -419,8 +499,8 @@ html body .card-sub .sub-item:nth-last-child(1) {
   height: 68vh;
   max-height: 70vh;
   align-items: center;
-  margin-top: 5vw;
-  margin-bottom: 5vw;
+  margin-top: 5%;
+  margin-bottom: 5%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   z-index: 80;
@@ -476,7 +556,7 @@ html body .card-sub .sub-item:nth-last-child(1) {
   background-color: #ffffff;
   opacity: 0%;
   transition: all 250ms;
-  animation: floatInVoid 10s ease-in-out infinite;
+  animation: floatInVoid 5s ease-in infinite;
 }
 #hero-section .particles .dust:nth-child(1) {
   top: 5vh;
@@ -582,15 +662,14 @@ html body .card-sub .sub-item:nth-last-child(1) {
 }
 
 #overview {
-  min-height: 100vh;
+  min-height: 50vh;
   overflow-y: hidden;
-  padding-top: 5vh;
+  padding-top: 5%;
 }
 #overview .overview-detail {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  margin-bottom: 2rem;
 }
 #overview .overview-detail .image {
   padding: 4rem;
@@ -610,9 +689,11 @@ html body .card-sub .sub-item:nth-last-child(1) {
 
 #tokenomics {
   position: relative;
-  max-height: 50vh;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+  min-height: 50vh;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 #tokenomics .gradients {
   position: absolute;
