@@ -429,7 +429,6 @@ html body .footer .credit .footer-credit:active {
   }
   50% {
     opacity: 40%;
-    left: 50vw;
   }
   100% {
     transform: rotateZ(2160deg);
