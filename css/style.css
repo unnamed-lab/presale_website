@@ -367,6 +367,7 @@ html body .info {
 html body .breaker {
   width: 100%;
   height: 10rem;
+  margin-bottom: 3rem;
 }
 @media (max-width: 1023px) {
   html body .breaker {
@@ -485,7 +486,8 @@ html body .footer-container {
   flex-wrap: wrap;
   flex-direction: column;
   width: 100% !important;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (max-width: 1023px) {
   html body .footer-container {
@@ -787,7 +789,12 @@ html body .footer .credit .footer-credit:active {
 .navbar .nav-brand img {
   width: 100%;
 }
-.navbar .nav-option {
+@media (max-width: 767px) {
+  .navbar .nav-menu {
+    display: none;
+  }
+}
+.navbar .nav-menu .nav-option {
   display: flex;
   flex-wrap: nowrap;
   align-self: flex-end;
@@ -796,28 +803,28 @@ html body .footer .credit .footer-credit:active {
   margin-right: auto;
   font-size: calc(1.1 * var(--fs-300));
 }
-.navbar .nav-option .nav-item {
+.navbar .nav-menu .nav-option .nav-item {
   margin-left: 1.33rem;
   margin-right: 1.33rem;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .navbar .nav-option .nav-item {
+  .navbar .nav-menu .nav-option .nav-item {
     margin-left: 0.75rem;
     margin-right: 0.75rem;
   }
 }
-.navbar .nav-option .nav-item a {
+.navbar .nav-menu .nav-option .nav-item a {
   color: #ffffff;
 }
-.navbar .nav-option .nav-item a:hover {
+.navbar .nav-menu .nav-option .nav-item a:hover {
   color: #00c3ff;
   transition: all 500ms;
 }
-.navbar .nav-connect {
+.navbar .nav-menu .nav-connect {
   margin-left: 1.25rem;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .navbar .nav-connect {
+  .navbar .nav-menu .nav-connect {
     margin-left: 0.8rem;
   }
 }
@@ -849,7 +856,7 @@ html body .footer .credit .footer-credit:active {
 }
 @media (max-width: 1023px) {
   #hero-section .hero {
-    margin-bottom: 1rem;
+    margin-bottom: 11%;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1260,7 +1267,7 @@ html body .footer .credit .footer-credit:active {
 
 #tokenomics {
   position: relative;
-  min-height: 50vh;
+  min-height: 40vh;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-top: 5%;
