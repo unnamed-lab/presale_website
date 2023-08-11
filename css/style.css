@@ -424,7 +424,7 @@ html body .bs-900 {
 }
 html body .card {
   max-width: 100%;
-  background-color: rgba(200, 200, 200, 0.3137254902);
+  background-color: rgba(200, 200, 200, 0.5058823529);
   margin-top: 5vw;
   margin-bottom: 5vw;
   padding-top: 2.5rem;
@@ -475,11 +475,23 @@ html body .footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+@media (max-width: 1023px) {
+  html body .footer {
+    padding-bottom: 1.25rem;
+  }
+}
 html body .footer-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   width: 100% !important;
+  text-align: center;
+}
+@media (max-width: 1023px) {
+  html body .footer-container {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
 }
 html body .footer-container .footer-brand {
   max-width: 8rem;
@@ -492,15 +504,32 @@ html body .footer-container .footer-description {
   font-size: var(--fs-300);
   margin-bottom: 2rem;
 }
+@media (max-width: 1023px) {
+  html body .footer-container .footer-description {
+    font-size: var(--fs-600);
+  }
+}
 html body .footer-container .footer-heading {
   color: #646464;
   font-size: calc(1.1 * var(--fs-500));
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
+@media (max-width: 1023px) {
+  html body .footer-container .footer-heading {
+    font-size: var(--fs-700);
+    margin-bottom: 0.5rem;
+  }
+}
 html body .footer-container .footer-menu {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+@media (max-width: 1023px) {
+  html body .footer-container .footer-menu {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 html body .footer-container .footer-menu .footer-option {
   margin-bottom: 0.5rem;
@@ -518,6 +547,11 @@ html body .footer-container .footer-menu .footer-option .footer-link:active {
 html body .footer .credit {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+@media (max-width: 1023px) {
+  html body .footer .credit {
+    font-size: var(--fs-500);
+  }
 }
 html body .footer .credit .footer-credit {
   color: #008cff;
@@ -789,18 +823,22 @@ html body .footer .credit .footer-credit:active {
 }
 
 #hero-section {
-  --hero-md: 42vh;
+  --hero-md: 55vh;
   min-height: 30vh;
-  max-height: var(--hero-md);
+  max-height: 78vh;
   overflow: hidden;
   opacity: 100%;
   transition: all 1s;
+}
+@media (max-width: 1023px) {
+  #hero-section {
+    max-height: var(--hero-md);
+  }
 }
 #hero-section .hero {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  height: 68vh;
   max-height: 70vh;
   align-content: center;
   margin-top: 5%;
@@ -808,6 +846,11 @@ html body .footer .credit .footer-credit:active {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   z-index: 80;
+}
+@media (max-width: 1023px) {
+  #hero-section .hero {
+    margin-bottom: 1rem;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   #hero-section .hero {
@@ -817,7 +860,7 @@ html body .footer .credit .footer-credit:active {
 }
 @media (max-width: 767px) {
   #hero-section .hero {
-    max-height: var(--hero-md);
+    max-height: calc(0.8 * var(--hero-md));
     height: 40vh;
   }
 }
@@ -827,18 +870,16 @@ html body .footer .credit .footer-credit:active {
   align-content: space-evenly;
   margin-top: 0.6666666667rem;
   margin-bottom: 1.3333333333rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (max-width: 767px) {
   #hero-section .hero .btn-row {
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 0.6666666667rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   #hero-section .hero .btn-row {
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 1rem;
   }
 }
@@ -1289,19 +1330,39 @@ html body .footer .credit .footer-credit:active {
 #tokenomics .item-list {
   display: flex;
   flex-wrap: nowrap;
-  flex-direction: row;
+  flex: 1;
+  max-width: 100%;
   padding-top: 0.6rem;
   padding-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  #tokenomics .item-list {
+    flex-direction: row;
+  }
+}
+@media (max-width: 767px) {
+  #tokenomics .item-list {
+    flex-direction: column;
+  }
 }
 #tokenomics .item-list .value {
   position: relative;
   width: fit-content;
   height: fit-content;
   font-size: var(--fs-500);
+  color: #ffffff;
   margin-left: auto;
   margin-right: auto;
   pointer-events: none;
   opacity: 90%;
+}
+@media (max-width: 767px) {
+  #tokenomics .item-list .value {
+    width: 100%;
+    margin-bottom: 0.25rem;
+    margin-left: 2rem;
+    margin-right: 0;
+  }
 }
 #tokenomics .item-list .value i {
   content: "";
@@ -1322,6 +1383,15 @@ html body .footer .credit .footer-credit:active {
   padding-top: 0.5rem;
   padding-bottom: 0.5em;
 }
+#contact .contact-header {
+  text-align: left;
+}
+@media (max-width: 767px) {
+  #contact .contact-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+}
 #contact .social {
   display: flex;
   flex: 1 0 0;
@@ -1341,6 +1411,22 @@ html body .footer .credit .footer-credit:active {
   padding: 0.75rem;
   align-content: center;
   justify-content: center;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #contact .social-link {
+    width: 4rem;
+    height: 4rem;
+    padding: 0.5rem;
+    border: 0.35rem solid #ffffff;
+  }
+}
+@media (max-width: 767px) {
+  #contact .social-link {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    border: 0.25rem solid #ffffff;
+  }
 }
 #contact .social-link svg path {
   width: 100%;
