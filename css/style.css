@@ -505,7 +505,7 @@ html body .card-sub .sub-item:nth-last-child(1) {
     height: 1.75rem;
     max-width: 1.75rem;
     max-height: 1.75rem;
-    border: 1.5px solid #646464;
+    border: 1.5px solid #8c8c8c;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 0.5rem;
@@ -524,7 +524,7 @@ html body .card-sub .sub-item:nth-last-child(1) {
     border-radius: 2rem;
   }
   html body .toggle-bar .bar:nth-child(-n+3) {
-    background-color: #787878;
+    background-color: #b4b4b4;
     margin-top: 4px;
     margin-bottom: 4px;
   }
