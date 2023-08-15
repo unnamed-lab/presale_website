@@ -481,6 +481,49 @@ html body .card-sub .sub-item {
 html body .card-sub .sub-item:nth-last-child(1) {
   border-right: none;
 }
+@media (max-width: 767px) {
+  html body .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 95;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.9);
+    backdrop-filter: blur(0.5rem);
+  }
+  html body .overlay.hidden {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  html body .toggle-bar {
+    width: 2.1rem;
+    height: 2.1rem;
+    border: 4px solid #a0a0a0;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    background-color: rgba(100, 100, 100, 0.3);
+    margin-left: auto;
+  }
+  html body .toggle-bar.hidden {
+    display: none;
+  }
+  html body .toggle-bar .contain {
+    width: 100%;
+  }
+  html body .toggle-bar .contain .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #a0a0a0;
+    border-radius: 2rem;
+  }
+  html body .toggle-bar .contain .bar:nth-child(-n+3) {
+    background-color: #a0a0a0;
+    margin-top: 0.45rem;
+    margin-bottom: 0.45rem;
+  }
+}
 
 /*  Typography  */
 :root {
@@ -694,9 +737,9 @@ html body .card-sub .sub-item:nth-last-child(1) {
   .navbar {
     min-height: 5vh;
     margin-bottom: 2rem;
-    margin-left: 1.15rem;
-    margin-right: 1.15rem;
     margin-top: 1.15rem;
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
   }
 }
 .navbar .nav-brand {
@@ -721,7 +764,37 @@ html body .card-sub .sub-item:nth-last-child(1) {
 }
 @media (max-width: 767px) {
   .navbar .nav-menu {
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20dvh;
+    left: 0;
+    right: 0;
+  }
+  .navbar .nav-menu.hidden {
     display: none;
+  }
+  .navbar .nav-menu .nav-option {
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+  }
+  .navbar .nav-menu .nav-option .nav-item {
+    font-size: calc(1.5 * var(--fs-900));
+    margin-bottom: 2rem;
+  }
+  .navbar .nav-menu .nav-connect {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navbar .nav-menu .nav-connect a {
+    font-size: calc(1.15 * var(--fs-800));
   }
 }
 .navbar .nav-menu .nav-option {

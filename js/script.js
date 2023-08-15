@@ -28,6 +28,29 @@
   });
 })();
 
+/*  Nav Bar Mobile View */
+const toggleBtn = document.querySelector(".toggle-bar");
+const toggleOverlay = document.querySelector("#nav-overlay");
+const navMenu = document.querySelector(".nav-menu");
+
+toggleBtn.addEventListener("click", function () {
+  toggleBtn.classList.toggle("hidden")
+  if (toggleBtn.classList.contains("hidden")) {
+    toggleOverlay.classList.remove("hidden");
+    navMenu.classList.remove("hidden");
+  } else {
+    toggleOverlay.classList.add("hidden");
+    navMenu.classList.add("hidden");
+  }
+});
+
+toggleOverlay.addEventListener("click", function () {
+  toggleBtn.classList.remove("hidden");
+  toggleOverlay.classList.add("hidden");
+    navMenu.classList.add("hidden");
+});
+
+
 /*  Price Data  */
 const icoPriceLabel = document.querySelector("#ico-price");
 const presalePriceLabel = document.querySelector("#presale-price");
@@ -69,7 +92,6 @@ const allocation = [
     percentage: "60%",
   },
 ];
-
 const allocationBar = document.querySelector(".allocation-bar");
 const allocationList = document.querySelector(".allocation-list");
 
