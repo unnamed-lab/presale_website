@@ -17,9 +17,7 @@
       showSeconds = Math.floor((distance % minutes) / second);
     const message = `${showHrs > 0 ? `${showDays}days ` : ""}${
       showHrs > 0 ? `${showHrs}hrs ` : ""
-    }${showMins > 0 ? `${showMins}mins ` : ""}${
-      showSeconds > 0 ? `${showSeconds}secs ` : ""
-    } left!`;
+    }${showMins}mins ${showSeconds}secs  left!`;
 
     if (distance < 0) {
       timer.textContent = "The Sales Are Over!";

@@ -1181,7 +1181,7 @@ html body .card-sub .sub-item:nth-last-child(1) {
     word-spacing: 0.15rem;
   }
   #call-to-action .countdown h1 {
-    font-size: var(--fs-500);
+    font-size: var(--fs-600);
   }
 }
 #call-to-action .countdown #timer {
@@ -1196,7 +1196,7 @@ html body .card-sub .sub-item:nth-last-child(1) {
 }
 @media (max-width: 767px) {
   #call-to-action .countdown #timer {
-    font-size: calc(var(--fs-600));
+    font-size: calc(1.15 * var(--fs-500));
   }
 }
 #call-to-action .sales-details {
