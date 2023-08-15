@@ -488,7 +488,7 @@ html body .card-sub .sub-item:nth-last-child(1) {
     left: 0;
     z-index: 95;
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     background-color: rgba(40, 40, 40, 0.9);
     backdrop-filter: blur(0.5rem);
   }
@@ -498,30 +498,35 @@ html body .card-sub .sub-item:nth-last-child(1) {
 }
 @media (max-width: 767px) {
   html body .toggle-bar {
-    width: 2.1rem;
-    height: 2.1rem;
-    border: 4px solid #a0a0a0;
-    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    width: 1.75rem;
+    height: 1.75rem;
+    max-width: 1.75rem;
+    max-height: 1.75rem;
+    border: 1.5px solid #646464;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     border-radius: 0.75rem;
+    overflow: hidden;
     background-color: rgba(100, 100, 100, 0.3);
     margin-left: auto;
   }
   html body .toggle-bar.hidden {
     display: none;
   }
-  html body .toggle-bar .contain {
+  html body .toggle-bar .bar {
     width: 100%;
-  }
-  html body .toggle-bar .contain .bar {
-    width: 100%;
-    height: 4px;
-    background-color: #a0a0a0;
+    height: 2px;
     border-radius: 2rem;
   }
-  html body .toggle-bar .contain .bar:nth-child(-n+3) {
-    background-color: #a0a0a0;
-    margin-top: 0.45rem;
-    margin-bottom: 0.45rem;
+  html body .toggle-bar .bar:nth-child(-n+3) {
+    background-color: #787878;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 }
 
@@ -785,7 +790,7 @@ html body .card-sub .sub-item:nth-last-child(1) {
     text-align: center;
   }
   .navbar .nav-menu .nav-option .nav-item {
-    font-size: calc(1.5 * var(--fs-900));
+    font-size: calc(1.15 * var(--fs-900));
     margin-bottom: 2rem;
   }
   .navbar .nav-menu .nav-connect {
@@ -794,7 +799,7 @@ html body .card-sub .sub-item:nth-last-child(1) {
     margin-right: auto;
   }
   .navbar .nav-menu .nav-connect a {
-    font-size: calc(1.15 * var(--fs-800));
+    font-size: calc(1.05 * var(--fs-800));
   }
 }
 .navbar .nav-menu .nav-option {
@@ -849,9 +854,10 @@ html body .card-sub .sub-item:nth-last-child(1) {
 }
 @media (max-width: 767px) {
   #hero-section {
+    --hero-md: 89vh;
     display: flex;
     flex-wrap: wrap;
-    min-height: 90dvh;
+    min-height: var(--hero-md);
   }
 }
 #hero-section .hero {
