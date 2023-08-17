@@ -55,11 +55,13 @@ toggleOverlay.addEventListener("click", function () {
   toggleBtn.classList.contains("hidden") === true
     ? toggleBtn.classList.remove("hidden")
     : null;
+
   navMenu.classList.contains("hidden") === false
     ? navMenu.classList.add("hidden")
     : null;
+
   modal.classList.contains("hidden") === false
-    ? modal.classList.add(hidden)
+    ? modal.classList.add("hidden")
     : null;
 });
 
