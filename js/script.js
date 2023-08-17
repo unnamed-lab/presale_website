@@ -26,13 +26,16 @@
   });
 })();
 
-/*  Nav Bar Mobile View */
+/*  Overlay, Nav and Modal */
 const toggleBtn = document.querySelector(".toggle-bar");
-const toggleOverlay = document.querySelector("#nav-overlay");
+const toggleOverlay = document.querySelector(".overlay");
 const navMenu = document.querySelector(".nav-menu");
+const modal = document.querySelector(".modal");
+const buyBtn = document.querySelector("#buy-presale");
+
 
 toggleBtn.addEventListener("click", function () {
-  toggleBtn.classList.toggle("hidden")
+  toggleBtn.classList.toggle("hidden");
   if (toggleBtn.classList.contains("hidden")) {
     toggleOverlay.classList.remove("hidden");
     navMenu.classList.remove("hidden");
@@ -42,12 +45,23 @@ toggleBtn.addEventListener("click", function () {
   }
 });
 
-toggleOverlay.addEventListener("click", function () {
-  toggleBtn.classList.remove("hidden");
-  toggleOverlay.classList.add("hidden");
-    navMenu.classList.add("hidden");
+buyBtn.addEventListener("click", function () {
+  toggleOverlay.classList.remove("hidden");
+  modal.classList.remove("hidden");
 });
 
+toggleOverlay.addEventListener("click", function () {
+  toggleOverlay.classList.add("hidden");
+  toggleBtn.classList.contains("hidden") === true
+    ? toggleBtn.classList.remove("hidden")
+    : null;
+  navMenu.classList.contains("hidden") === false
+    ? navMenu.classList.add("hidden")
+    : null;
+  modal.classList.contains("hidden") === false
+    ? modal.classList.add(hidden)
+    : null;
+});
 
 /*  Price Data  */
 const icoPriceLabel = document.querySelector("#ico-price");
@@ -55,7 +69,6 @@ const presalePriceLabel = document.querySelector("#presale-price");
 const priceArr = [0.6, 0.25];
 icoPriceLabel.textContent = `$${priceArr[0]}`;
 presalePriceLabel.textContent = `$${priceArr[1]}`;
-
 
 /*  Token Allocation  */
 const allocation = [
@@ -94,17 +107,15 @@ const allocationBar = document.querySelector(".allocation-bar");
 const allocationList = document.querySelector(".allocation-list");
 
 const tokenAllocation = function (data) {
-  data.forEach(el => {
+  data.forEach((el) => {
     const bar = `<div class="bar" style="background-color: ${el.colour}; flex: ${el.percentage};"></div>`;
     const item = `<div class="value"><i style="background-color: ${el.colour};"></i>${el.title} (${el.percentage})</div>`;
     allocationBar.insertAdjacentHTML("beforeend", bar);
-    allocationList.insertAdjacentHTML("beforeend", item)
+    allocationList.insertAdjacentHTML("beforeend", item);
   });
 };
 
 tokenAllocation(allocation);
-
-
 
 const tg = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M28.59 4.29a2.23 2.23 0 0 0-2.27-.36L3.41 13.1a1.83 1.83 0 0 0 0 3.38l1.48.61a1 1 0 0 0 1.31-.53 1 1 0 0 0-.54-1.31l-1.1-.45 22.51-9a.22.22 0 0 1 .23 0 .24.24 0 0 1 .08.23l-4.11 19.18a.4.4 0 0 1-.26.3.39.39 0 0 1-.39-.06l-8-6.24 7.83-7.91a1 1 0 0 0-1.22-1.56l-11.48 6.8a1 1 0 1 0 1 1.72l4.83-2.85-2.35 2.39a2 2 0 0 0 .2 3.08l8 6.15a2.4 2.4 0 0 0 1.47.5 2.47 2.47 0 0 0 .83-.15 2.37 2.37 0 0 0 1.52-1.75l4.08-19.16a2.23 2.23 0 0 0-.74-2.18Z" data-name="telegram social media network chat" fill="#ffffff" class="fill-000000"></path></svg>`;
 
@@ -115,7 +126,7 @@ const discord = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g 
 const icons = [tg, tw, discord];
 const socialLink = document.querySelectorAll(".social-link");
 
-socialLink.forEach((el, key) => el.innerHTML = icons[key]);
+socialLink.forEach((el, key) => (el.innerHTML = icons[key]));
 
 // console.log(socialLink);
 // const addIcon = function(icons) {

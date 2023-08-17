@@ -7,13 +7,13 @@
 
     <!-- Open Graph Meta Tags  -->
     <meta property="og:title" content="Web3 Frontend Project By Unnamed" />
-    <meta property="og:description" content="This project represents a dedicated effort to enhance my proficiency in frontend development. Through meticulous design and skillful implementation, I aimed to elevate my abilities in creating visually appealing, user-centric web interfaces. The project stands as a testament to my commitment to continuous learning and growth within the realm of frontend development." />
-    <meta property="og:image" content="./img/banner.png" />
+    <meta property="og:description" content="This project showcases my dedication to improving my frontend development skills. With careful design and skilled execution, I aimed to enhance my ability to create visually appealing and user-centered web interfaces. It reflects my commitment to constant learning and growth in frontend development." />
+    <meta property="og:image" content="./img/banner.jpg" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Unnamed Project Build" />
     <meta property="og:url" content="https://unnamed-web3-build01.vercel.app/" />
-    <meta property="og:image:secure_url" content="./img/banner.png" />
+    <meta property="og:image:secure_url" content="./img/banner.jpg" />
 <meta property="og:image:type" content="image/png" />
     <meta property="og:type" content="website" />
 
@@ -21,8 +21,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@unnamed_labs">
     <meta name="twitter:title" content="Web3 Frontend Project By Unnamed">
-    <meta name="twitter:description" content="This project represents a dedicated effort to enhance my proficiency in frontend development. Through meticulous design and skillful implementation, I aimed to elevate my abilities in creating visually appealing, user-centric web interfaces. The project stands as a testament to my commitment to continuous learning and growth within the realm of frontend development.">
-    <meta name="twitter:image" content="./img/banner.png">
+    <meta name="twitter:description" content="This project showcases my dedication to improving my frontend development skills. With careful design and skilled execution, I aimed to enhance my ability to create visually appealing and user-centered web interfaces. It reflects my commitment to constant learning and growth in frontend development.">
+    <meta name="twitter:image" content="./img/banner.jpg">
 
     <!-- JSON-LD Schema Markup for Website -->
     <script type="application/ld+json">
@@ -30,7 +30,7 @@
         "@context": "http://schema.org",
         "@type": "WebSite",
         "name": "Web3 Frontend Project By Unnamed",
-        "description": "This project represents a dedicated effort to enhance my proficiency in frontend development. Through meticulous design and skillful implementation, I aimed to elevate my abilities in creating visually appealing, user-centric web interfaces. The project stands as a testament to my commitment to continuous learning and growth within the realm of frontend development.",
+        "description": "This project showcases my dedication to improving my frontend development skills. With careful design and skilled execution, I aimed to enhance my ability to create visually appealing and user-centered web interfaces. It reflects my commitment to constant learning and growth in frontend development.",
         "url": "https://unnamed-web3-build01.vercel.app/",
         "image": "https://unnamed-web3-build01.vercel.app/img/banner.png",
         "author": {
@@ -62,6 +62,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="overlay hidden"></div>
     <main>
       <nav class="navbar">
         <div class="nav-brand">
@@ -70,7 +71,6 @@
           </a>
         </div>
         
-        <div id="nav-overlay" class="overlay hidden"></div>
         <div class="toggle-bar">
           <div class="bar"></div>
           <div class="bar"></div>
@@ -152,7 +152,7 @@
             <h2 class="mb-1">
               Pre-Sale Price: <br /><b id="presale-price"></b>
             </h2>
-            <a href="#" class="btn big primary mb-2">Buy Pre-Sale</a>
+            <button id="buy-presale" class="btn big primary mb-2">Buy Pre-Sale</button>
             <p class="info col-10">
               **Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Consequatur, provident soluta!
@@ -203,7 +203,7 @@
           <div class="grad-et"></div>
         </div>
         <div class="row r-sm-block">
-          <div class="card bs-700">
+          <div class="card bs-100">
             <div class="card-header">
               <div class="heading"><h2>Token Allocation.</h2></div>
             </div>
@@ -214,14 +214,41 @@
           </div>
         </div>
       </section>
+
       <section id="contact" class="container">
         <div class="row align-center r-sm-block">
           <div class="col-lg-5 col-md-5 col-sm-12"><h1 class="contact-header">Connect With Us</h1></div>
           <div class="col-lg-8 col-md-8 col-sm-12">
             <div class="social">
-              <div class="col-3 mx-auto"><a href="#" class="social-link"></a></div>
-              <div class="col-3 mx-auto"><a href="#" class="social-link"></a></div>
-              <div class="col-3 mx-auto"><a href="#" class="social-link"></a></div>
+              <div class="col-3 mx-auto"><a href="https://twitter.com/unnamed_labs" class="social-link"></a></div>
+              <div class="col-3 mx-auto"><a href="https://twitter.com/unnamed_labs" class="social-link"></a></div>
+              <div class="col-3 mx-auto"><a href="https://twitter.com/unnamed_labs" class="social-link"></a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="modal hidden">
+        <div class="modal-body">
+          <h4 class="heading">Lorem ipsum dolor sit amet consectetur.</h4>
+          <div class="form-container">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" name="userEmail" id="email" class="form-input" placeholder="unnamed@email.dev">
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount($):</label>
+              <input type="number" name="deposit" id="amount" class="form-input" placeholder="0.00">
+            </div>
+            <div class="form-group">
+              <label for="estimate">ETH:</label>
+              <span id="estimate">200.00ETH</span>
+            </div>
+            <div class="form-group">
+              <div class="info warning">**Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod repellat, possimus deleniti beatae voluptatem ipsa.</div>
+            </div>
+            <div class="form-group">
+              <input type="button" value="Make Payment" class="btn primary small">
             </div>
           </div>
         </div>
