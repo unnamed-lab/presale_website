@@ -568,6 +568,15 @@ html body .modal.hidden {
     padding: 1.25rem;
   }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  html body .modal {
+    background-color: rgba(200, 200, 200, 0.9);
+    top: 20dvh;
+    left: 15vw;
+    width: 70%;
+    padding: 1.25rem;
+  }
+}
 html body .modal-body {
   width: 80%;
   margin-left: auto;
@@ -592,6 +601,11 @@ html body .modal-body .heading {
   padding-left: 1.25rem;
   margin-bottom: 1.5rem;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  html body .modal-body .heading {
+    font-size: calc(1.25 * var(--fs-800));
+  }
+}
 html body .form-container {
   display: flex;
   flex-wrap: wrap;
@@ -608,6 +622,12 @@ html body .form-container {
     padding-left: 0.75rem;
   }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  html body .form-container {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+}
 html body .form-container .form-group {
   display: inherit;
   flex-wrap: wrap;
@@ -615,7 +635,7 @@ html body .form-container .form-group {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   html body .form-container .form-group {
     flex-direction: column;
   }
@@ -628,7 +648,7 @@ html body .form-container label {
   margin-right: 0.6rem;
   font-size: var(--fs-500);
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   html body .form-container label {
     margin-bottom: 0.33rem;
     font-size: var(--fs-600);
@@ -641,7 +661,7 @@ html body .form-container span {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   html body .form-container span {
     font-size: calc(1.33 * var(--fs-800));
   }
